@@ -8,13 +8,15 @@ import * as serviceWorker from './serviceWorker';
 
 const node=document.getElementById('root');
 
-const arr=[1,2,3,4,5,6];
+const arr=[1,2,3,4];
 //const sumfn = (subtotal,increment) => (subtotal * increment);
 const sumarr=arr.reduce((a,b)=>(a+b));
 //const summarr=arr.reduce(sumfn());
+const sumarr3=arr.reduce((a,b,c)=>(a+b+c));
 
 const strarr=['a','m','e','r','p','e','a','c','e'];
 const concatstr=strarr.reduce((a,b)=>(a+b));
+const concatstr3=strarr.reduce((a,b,c)=>(a+b+c+'!'));
 
 const data = {
   post: {
@@ -215,7 +217,7 @@ CommentBox.propTypes = {
   
   export const AppPost = React.createElement(Post, {
     id: 1, //#H
-    content: " said: This is more than a post! " + sumarr.toString() + concatstr, //#H
+    content: " said: This is more than a post! " + sumarr.toString() + concatstr + sumarr3.toString() + concatstr3, //#H
     user: "mark", //#H
     flag: "urgent"
   });
